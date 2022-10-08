@@ -1,0 +1,116 @@
+.controll_panel{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .points{
+        display: flex;
+        margin-top: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+        .point{
+            width: 8px;
+            height: 8px;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 5px;
+            margin-right: 5px;
+            background: rgba(175, 175, 175, 0.562);
+            border-radius: 50%;
+            box-shadow: 4px 4px 10px #000;
+        }
+
+        .active{
+            background: rgb(214, 214, 214);
+        }
+    }
+    button{
+        width: 50px;
+        height: 50px;
+        background: rgb(82, 82, 82);
+        border: none;
+        padding: 5px;
+        transition: 0.2s;
+        &:focus{
+            outline: none;
+        }
+        &:hover{
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.596);
+            transition: 0.2s;
+        }
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .left_button{
+        img{
+            transform: rotateZ(-90deg);
+        }
+    }
+    .right_button{
+        img{
+            transform: rotateZ(90deg);
+        }
+    }
+}
+
+@media (max-width: 800px){
+    .controll_panel{
+        //display: flex;
+        //margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        .points{
+            display: flex;
+            margin-top: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: auto;
+            margin-bottom: auto;
+            .point{
+                width: 8px;
+                height: 8px;
+                margin: 5px;
+                background: rgba(175, 175, 175, 0.562);
+                border-radius: 50%;
+                box-shadow: 4px 4px 10px #000;
+            }
+    
+            .active{
+                background: rgb(214, 214, 214);
+            }
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            background: rgb(82, 82, 82);
+            border: none;
+            padding: 5px;
+            transition: 0.2s;
+            &:focus{
+                outline: none;
+            }
+            &:hover{
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.596);
+                transition: 0.2s;
+            }
+            img{
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .left_button{
+            img{
+                transform: rotateZ(-90deg);
+            }
+        }
+        .right_button{
+            img{
+                transform: rotateZ(90deg);
+            }
+        }
+    }
+}

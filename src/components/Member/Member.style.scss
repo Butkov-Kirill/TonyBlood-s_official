@@ -1,0 +1,192 @@
+$speed: 1s;
+
+.card{
+    width: 48%;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    perspective: 800px;
+    transition: 0.5s;
+    &:hover{
+        perspective: 800px;
+        transform: rotateX(8deg) rotateY(-8deg);
+        transition: 0.5s;
+    }
+
+    .back_card{
+        border: 1px solid #fff;
+        perspective: 800px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 20px;
+        width: 100%;
+        height: 88%;
+        transform:  rotateX(0deg) rotateY(-180deg);
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.384);
+        backface-visibility: hidden;
+        overflow: hidden;
+        transition: $speed;
+        &:hover{
+            box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.774);
+        }
+        .dossier{
+            font-size: 18px;
+            font-weight: 300;
+            text-shadow: 2px 2px 10px #000;
+        }
+        .background{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index:-1;
+            background: url('../../media/images/MemberBackgroundBack.jpg');
+            background-size: cover;
+            &:after{
+                content: ' ';
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.781);
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+.member{
+    z-index: 10;
+    border: 1px solid rgba(102, 102, 102, 0.63);
+    perspective: 800px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 40px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.384);
+    transform:  rotateX(0deg) rotateY(5deg);
+    transition: $speed;
+    backface-visibility: hidden;
+    overflow: hidden;
+    &:hover{
+        box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.774);
+    }
+
+    .tg_button{
+        $size: 40px;
+        width: $size;
+        height: $size;
+        position: absolute;
+        background: none;
+        border: none;
+        left: auto;
+        right: 15px;
+        top: 15px;
+        z-index: 10;
+        
+        &:focus{
+            outline: none;
+        }
+        img{
+            width: $size;
+            height: $size;
+            transition: 0.2s;
+            &:hover{
+                filter: drop-shadow(1px 1px 0 10px #fff);
+                transition: 0.2s;
+            }
+        }
+    }
+    .background{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background: url('../../media/images/MemberBackground.jpg');
+        background-size: cover;
+        &:after{
+            content: ' ';
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.822);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+    .avatar{
+        width: 250px;
+        border-radius: 50%;
+        box-shadow: 0 0 20px #ffffff3d;
+        border: 2px solid rgba(255, 255, 255, 0.726);
+    }
+    .info_member{
+        margin-left: 30px;
+        .name{
+            font-size: 40px;
+            font-weight: bolder;
+        }
+        .status{
+            margin-top: 10px;
+            font-weight: 300;
+            font-size: 18px;
+        }
+        .post_member{
+            margin-top: 10px;
+            font-weight: 200;
+            font-size: 16px;
+        }
+    }
+}
+
+@media(max-width: 800px){
+    .card{
+        cursor:auto;
+        width: 100%;
+
+        .back_card{
+            .dossier{
+                font-size: 17px;
+                text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.705);
+            }
+            .background{
+                width: 100%;
+                height: 100%;
+                img{
+                    width: auto;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .member{
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(180deg, rgb(12, 12, 12),rgba(17, 17, 17, 0.911), rgba(10, 10, 10, 0.822));
+    
+        .background{
+            .background_image{
+                width: auto;
+                height: 100%;
+            }
+        }
+        .avatar{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.24);
+            border: 2px solid rgba(255, 255, 255, 0.726);
+        }
+        .info_member{
+            margin-left: 0px;
+            margin-top: 10px;
+        }
+    }
+}

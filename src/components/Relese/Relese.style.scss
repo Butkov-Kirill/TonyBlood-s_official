@@ -1,0 +1,144 @@
+.relese{
+    position: relative;
+    padding: 17px;
+    background: linear-gradient(90deg,#1a1a1af1, #313131f1);
+    border-radius: 30px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.849);
+    width: 340px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    overflow: hidden;
+    background: url('../../media/images/ReleseBackground.jpg');
+    background-size: cover;
+
+    .background-wrapper{
+        background: linear-gradient(90deg,#0e0e0ef1, #1f1f1ff1);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+        .background-image{
+            border-radius: 30px;
+            filter: blur(1px);
+            opacity: 0.7;
+            height: 100%;
+        }
+    }
+    
+    .poster{
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        z-index: 1;
+        .img_poster{
+            width: 100%;
+            height: 100%;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.301);
+        }
+        .hover_bg{
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.856);
+            opacity: 0;
+            transition: 0.1s;
+            display: flex;
+            &:hover{
+                opacity: 1;
+                transition: 0.1s;
+            }
+            button{
+                cursor: pointer;
+                width: 50%;
+                height: 50%;
+                margin: auto auto;
+                background: #dbdbdb;
+                border: none;
+                border-radius: 50%;
+                transition: 0.1s;
+                opacity: 0.8;
+                &:focus{
+                    outline: none;
+                }
+                &:hover{
+                    background: #e6e6e6;
+                    transition: 0.1s;
+                    opacity: 1;
+                }
+                img{
+                    width: 70%;
+                }
+            }
+        }
+    }
+    .info_album{
+        z-index: 1;
+        margin-top: auto;
+        margin-bottom: auto;
+        .name_album{
+            z-index: 1;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            font-weight: 400;
+            margin-bottom: auto;
+            margin-top: auto;
+            padding-bottom: 10px;
+        }
+        .tracks_count{
+            z-index: 1;
+            color:rgb(197, 197, 197);
+            text-align: center;
+            font-weight: 200;
+            line-height: 5px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .relese{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: row;
+        .poster{
+            .hover_bg{
+                button{
+                    cursor: none;
+                }
+            }
+        }
+        .poster{
+            min-width: 150px;
+            min-height: 150px;
+            max-width: 150px;
+            max-height: 150px;
+            margin: 0;
+        }
+        .info_album{
+            margin: 0;
+            padding-left: 10px;
+            .name_album{
+                margin: 0;
+                text-align: left;
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+            .tracks_count{
+                margin: 0;
+                text-align: left;
+                font-size: 14px;
+            }
+        }
+    }
+}

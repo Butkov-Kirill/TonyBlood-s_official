@@ -1,0 +1,18 @@
+.button_list{
+    width: 100%;
+    background: none;
+    color: rgb(207, 207, 207);
+    text-align: left;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.26);
+    transition: 0.1s;
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        color: #ffffff;
+        transition: 0.1s;
+    }
+}

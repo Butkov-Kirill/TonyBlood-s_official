@@ -1,0 +1,258 @@
+.player{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 20;
+
+    .background{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.89);
+        z-index: -2;
+        backdrop-filter: blur(5px);
+    }
+    
+    .player_popup{
+        color: #fff;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: 0;
+        position: relative;
+        z-index:5;
+        width: 60%;
+        height: 85%;
+        display: flex;
+        //flex-direction: column;
+        padding: 20px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.822);
+        overflow: hidden;
+        border-radius: 20px 20px 0 0;
+        justify-content: space-between;
+
+        .arrow_up{
+            display: none;
+        }
+        
+        .controlls{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .liner{
+            width: 2px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.295);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.651);
+        }
+        .tracks_list{
+            width: 45%;
+            display: flex;
+            flex-direction: column; 
+            img{
+                display: none;
+            }
+        }
+        .menu_list{
+            width: 45%;
+        }
+        .arrow_up{
+            display: none;
+        }
+
+        .background_popup{
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            
+            .background_image{
+                width: 130%;
+                transform: translate(-10%, 0);
+                opacity: 0.5;
+                
+            }
+            .blur{
+                backdrop-filter: blur(20px);
+                background: rgba(22, 22, 22, 0.699);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+        }
+        .name_album{
+            font-size: 18px;
+            padding: 10px 0 20px 0;
+            font-weight: 300;
+        }
+        .poster{
+            width: 220px;
+            height: 220px;
+            margin: 0 auto;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.568);
+        }
+        .name_track{
+            font-size: 25px;
+            margin: 18px 0 10px 0;
+        }
+        .author{
+            font-size: 16px;
+            font-weight: 200;
+            color: rgb(192, 192, 192);
+        }
+        .progress_menu{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 50px;
+            .time{
+                display: flex;
+                justify-content: space-between;
+                ._time{
+                    font-size: 16px;
+                    font-weight: 200;
+                }
+            }
+            .progress_bar{
+                margin-top: 10px;
+                border-radius: 50px;
+                height:5px;
+                width: 100%;
+                background: rgb(8, 8, 8);
+                cursor: pointer;
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.466);
+                transition: 0.1s;
+                &:hover{
+                    background: rgb(0, 0, 0);
+                    transition: 0.1s;
+                }
+                .progress{
+                    width: 0%;
+                    background: #cecece;
+                    height: 5px;
+                    border-radius: 10px;
+                    transition: 0.05s;
+                    &:hover{
+                        background: #ffffff;
+                        transition: 0.1s;
+                    }
+                }
+            }
+        }
+        .buttons{
+            width: 60%;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            justify-content: space-between;
+            button{
+                background: #cecece;
+                border: none;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                transition: 0.1s;
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.466);
+                display: flex;
+                &:focus{
+                    outline: none;
+                }
+                &:hover{
+                    background: #fcfcfc;
+                    transition: 0.1s;
+                }
+                img{
+                    width: 50%;
+                    margin: auto auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px){
+    .player{            
+        .player_popup{
+            width: 95%;
+            height: 90%;
+            flex-direction: column;
+            
+            .controlls{
+                width: 100%;
+            }
+    
+            .liner{
+                display: none;
+            }
+            .tracks_list{
+                position: absolute;
+                background: rgba(27, 27, 27, 0.801);
+                backdrop-filter: blur(10px);
+                padding: 5px;
+                border-radius: 20px 20px 0 0;
+                width: 100%;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                overflow: auto;
+                //top:0;
+                bottom: -100%;
+                left: 0;
+                box-shadow: 0 0 20px #000;
+                transition: 0.1s;
+                img{
+                    display: block;
+                    width: 90px;
+                    margin: 0 auto;
+                    padding: 10px;
+                    transform: rotate(180deg);
+                }
+            }
+            .arrow_up{
+                display: block;
+                padding: 20px;
+                img{
+                    width: 60px;
+                }   
+            }
+    
+            .background_popup{                
+                .background_image{
+                    width: auto;
+                    height: 90vh;
+                    transform: translate(-25%, 0);
+                    
+                }
+                .blur{
+                    background: rgba(14, 14, 14, 0.767);
+                }
+            }
+            .name_album{
+                font-weight: 200;
+            }
+            .poster{
+                width: 80%;
+                height: auto;
+            }
+            .author{
+                color: rgb(175, 175, 175);
+            }
+            .buttons{
+                width: 80%;
+                margin-top: 30px;
+            }
+        }
+    }
+}
